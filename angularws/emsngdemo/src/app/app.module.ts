@@ -9,6 +9,7 @@ import { EmployeeComponent } from './employee/employee.component';
 import { FormsModule } from '@angular/forms';
 import { EmployeelistComponent } from './employeelist/employeelist.component';
 import { DirectivesComponent } from './directives/directives.component';
+import { CustomDirective } from './directives/custom.directive';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { DirectivesComponent } from './directives/directives.component';
     FooterComponent,
     EmployeeComponent,
     EmployeelistComponent,
-    DirectivesComponent
+    DirectivesComponent,
+    CustomDirective
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,28 @@
 <h1 class="txtyellow bgred">directives works!</h1>
 <!-- attribute directives-->
 <h1 [class]="styles">directives works!</h1>
+<h3 appCustom>This uses custom directive</h3>
+
+<select class="form-select m-3" [(ngModel)]="country">
+    <option value="india">India</option>
+    <option value="america">USA</option>
+</select>
+<img appCustom [country]="country" src="../../assets/images/india.png" alt = "India Flag"/>
+
+<ul>
+    <li *ngFor="let p of people">
+        <div [ngSwitch]="p.country">
+            <h4 *ngSwitchCase="'USA'" class="text-success">{{p.name}} : {{p.country}}</h4>
+            <h4 *ngSwitchCase="'UK'" class="text-warning">{{p.name}} : {{p.country}}</h4>
+            <!-- <h4 *ngSwitchCase="'MARS'" class="text-danger">{{p.name}} : {{p.country}}</h4> -->
+            <h4 *ngSwitchDefault>{{p.name}} : {{p.country}}</h4>
+        </div>
+        
+    </li>
+</ul>
+
+<!-- <ul *ngFor="let p of people">
+    <li >
+        <h4>{{p.name}} : {{p.country}}</h4>
+    </li>
+</ul> -->

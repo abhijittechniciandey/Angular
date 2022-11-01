@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class DirectivesComponent implements OnInit {
   styles: string = 'bgyellow txtgreen';
 
+
+  country:string ="america"
+
   people: any[] = [
     {
       name: 'Douglas Pace',
