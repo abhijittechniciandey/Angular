@@ -1,0 +1,25 @@
+<h1 class="text-center">Employee List</h1>
+<!--
+3 types of directives
+1. components
+2. structural  : *ngIf , *ngFor
+cannot use more than 1 structural directive on 1 element
+
+-->
+<!-- <div *ngIf="employees.length == 0">
+    <h3>No Employees Added Yet</h3>
+</div>
+<div *ngIf="employees.length != 0">
+    <h3>{{employees | json}}</h3>
+</div> -->
+
+<div *ngIf="employees.length == 0 ; else display">
+    <h3>No Employees Added Yet</h3>
+</div>
+<ng-template #display>
+    <div *ngFor="let employee of employees">
+        <app-employee [emp]="employee">
+            
+        </app-employee>
+    </div>
+</ng-template>
