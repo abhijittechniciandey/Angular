@@ -1,0 +1,21 @@
+<h1>Custom Pipe</h1>
+
+<p ngNonBindable>{{2+2}}</p>
+<p >{{2+2}}</p>
+
+<input type="text" [(ngModel)]="no"/>
+<p ngNonBindable>{{ 20 | custom:no}}</p>
+<p> Pipe : {{20 | custom : no}}</p>
+
+<p ngNonBindable>{{ 20 | custom}}</p>
+<p> Pipe : {{20 | custom}}</p>
+
+<p ngNonBindable>{{ bdate | date}}</p>
+<p> Pipe : {{bdate | date}}</p>
+
+<p ngNonBindable>{{ bdate | date:'medium'}}</p>
+<p> Pipe : {{bdate | date:'medium'}}</p>
+
+<p> Pipe : {{bdate}}</p>
+
+

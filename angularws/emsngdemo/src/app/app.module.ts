@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { EmployeelistComponent } from './employeelist/employeelist.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { CustomDirective } from './directives/custom.directive';
+import { PipesComponent } from './pipes/pipes.component';
+import { CustomPipe } from './pipes/custom.pipe';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { CustomDirective } from './directives/custom.directive';
     EmployeeComponent,
     EmployeelistComponent,
     DirectivesComponent,
-    CustomDirective
+    CustomDirective,
+    PipesComponent,
+    CustomPipe
   ],
   imports: [
     BrowserModule,
