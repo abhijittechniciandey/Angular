@@ -12,10 +12,7 @@ export class EmptemplateformComponent implements OnInit {
   newemp:EventEmitter<Employee> = new EventEmitter<Employee>();
 
   constructor() { }
-
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   addEmployee(emp:any)
   {

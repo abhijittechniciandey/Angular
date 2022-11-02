@@ -14,6 +14,7 @@ import { PipesComponent } from './pipes/pipes.component';
 import { CustomPipe } from './pipes/custom.pipe';
 import { EmpPipe } from './pipes/emp.pipe';
 import { EmptemplateformComponent } from './emptemplateform/emptemplateform.component';
+import { EditempformComponent } from './editempform/editempform.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { EmptemplateformComponent } from './emptemplateform/emptemplateform.comp
     PipesComponent,
     CustomPipe,
     EmpPipe,
-    EmptemplateformComponent
+    EmptemplateformComponent,
+    EditempformComponent
   ],
   imports: [
     BrowserModule,
