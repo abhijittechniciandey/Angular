@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Employee } from './model/employee';
 
 @Component({
   selector: 'app-root',
@@ -13,5 +14,12 @@ export class AppComponent {
   {
     alert('button clicked')
     
+  }
+  newemp:any;
+  newEmployeeEmitted(data:any)
+  {
+    alert('emitted')
+    console.log(data)
+    this.newemp = data;
   }
 }

@@ -91,7 +91,7 @@
 
 <div class="container">
     <h1>Add Employee</h1>
-    <form #empform="ngForm" (submit)="addEmployee(empform)">
+    <form #emp="ngForm">
         <div class="mb-3">
             <input type="text" class="form-control" [class.error]="eid.invalid && eid.touched" 
             required
@@ -174,7 +174,8 @@
             
         </div>
         <div class="mb-3">
-            <button type="submit">Add Employee</button>
+            <input type="button" (click)="addEmployee(emp.value)" 
+            [disabled]="emp.invalid" value="Add Employee"/>
         </div>
     </form>
     

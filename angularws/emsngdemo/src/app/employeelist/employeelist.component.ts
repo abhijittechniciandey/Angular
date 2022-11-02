@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { employees } from '../model/data';
 import { Employee } from '../model/employee';
 
@@ -10,6 +10,8 @@ import { Employee } from '../model/employee';
 export class EmployeelistComponent implements OnInit {
 
   employees:Employee[];
+  @Input()
+  newemp:any;
   constructor() { 
     console.log('employee list')
     this.employees = [];
