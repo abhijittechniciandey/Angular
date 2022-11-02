@@ -2,8 +2,21 @@
 
 <p ngNonBindable>{{2+2}}</p>
 <p >{{2+2}}</p>
+Base: <input type="text" [(ngModel)]="base"/>
+Power: <input type="text" [(ngModel)]="no"/>
+Emp Name: <input type="text" [(ngModel)]="employee.name"/>
 
-<input type="text" [(ngModel)]="no"/>
+<h3>{{employee.name}}</h3>
+<h1>Pure and Impure Pipe</h1>
+<!-- <p ngNonBindable>{{ base | custom:no}}</p>
+<p> Pipe : {{base | custom:no}}</p> -->
+
+<p ngNonBindable>{{ employee | emp}}</p>
+<p> Pipe : {{employee | emp}}</p>
+
+
+<br/>
+<!-- 
 <p ngNonBindable>{{ 20 | custom:no}}</p>
 <p> Pipe : {{20 | custom : no}}</p>
 
@@ -19,3 +32,4 @@
 <p> Pipe : {{bdate}}</p>
 
 
+ -->

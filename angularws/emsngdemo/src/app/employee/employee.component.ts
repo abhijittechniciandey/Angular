@@ -13,7 +13,7 @@ export class EmployeeComponent implements OnInit {
   
   constructor() { 
     this.emp =
-    {eid:0,ename:'',
+    {eid:0,ename:'',password:'',
     email:'',phone:''
     , address:{country:''}}
   }

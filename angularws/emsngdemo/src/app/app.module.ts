@@ -12,6 +12,8 @@ import { DirectivesComponent } from './directives/directives.component';
 import { CustomDirective } from './directives/custom.directive';
 import { PipesComponent } from './pipes/pipes.component';
 import { CustomPipe } from './pipes/custom.pipe';
+import { EmpPipe } from './pipes/emp.pipe';
+import { EmptemplateformComponent } from './emptemplateform/emptemplateform.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { CustomPipe } from './pipes/custom.pipe';
     DirectivesComponent,
     CustomDirective,
     PipesComponent,
-    CustomPipe
+    CustomPipe,
+    EmpPipe,
+    EmptemplateformComponent
   ],
   imports: [
     BrowserModule,
