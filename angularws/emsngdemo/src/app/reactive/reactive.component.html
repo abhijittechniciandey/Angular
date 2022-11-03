@@ -1,0 +1,28 @@
+<h1>Reactive Forms Demo</h1>
+<div class="mb-3">
+<input type="text" name="ename" [formControl]="ename"/>
+</div>
+<p>{{empform.value | json}}</p>
+<p>{{empform.valid}}</p>
+<form [formGroup]="empform">
+    <div class="mb-3">
+        <input type="text" formControlName="phone" 
+        [class.error]="phone.errors"/>
+        <div *ngIf="phone.touched">
+            <div *ngIf="phone.errors && phone.invalid">
+                <small class="text-danger" *ngIf="phone.errors['required']">
+                    Phone required </small>
+                <small class="text-danger" *ngIf="phone.errors['minlength']">
+                        Phone should be min 5 digits </small>
+                <small class="text-danger" *ngIf="phone.errors['pattern']">
+                            Phone cannot contain alphabets or symbols </small>
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <input type="text" formControlName="city"/>
+    </div>
+    <div class="mb-3">
+        <input type="text" formControlName="email"/>
+    </div>
+</form>

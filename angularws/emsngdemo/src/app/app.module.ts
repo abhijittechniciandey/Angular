@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { EmployeeComponent } from './employee/employee.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmployeelistComponent } from './employeelist/employeelist.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { CustomDirective } from './directives/custom.directive';
@@ -15,6 +15,9 @@ import { CustomPipe } from './pipes/custom.pipe';
 import { EmpPipe } from './pipes/emp.pipe';
 import { EmptemplateformComponent } from './emptemplateform/emptemplateform.component';
 import { EditempformComponent } from './editempform/editempform.component';
+import { LifecycleComponent } from './lifecycle/lifecycle.component';
+import { ChildComponent } from './lifecycle/child.component';
+import { ReactiveComponent } from './reactive/reactive.component';
 
 
 @NgModule({
@@ -30,10 +33,13 @@ import { EditempformComponent } from './editempform/editempform.component';
     CustomPipe,
     EmpPipe,
     EmptemplateformComponent,
-    EditempformComponent
+    EditempformComponent,
+    LifecycleComponent,
+    ChildComponent,
+    ReactiveComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, ReactiveFormsModule,
     AppRoutingModule, FormsModule, BrowserAnimationsModule
   ],
   providers: [],
