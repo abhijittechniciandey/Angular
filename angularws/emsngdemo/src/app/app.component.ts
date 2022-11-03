@@ -10,6 +10,7 @@ export class AppComponent {
   title = 'Welcome to Rebit';
   isEnabled:boolean = false;
   message:string = 'Enter some text'
+  add:boolean = false;
   clicked()
   {
     alert('button clicked')
@@ -21,5 +22,8 @@ export class AppComponent {
     alert('emitted')
     console.log(data)
     this.newemp = data;
+  }
+  addEmp(){
+    this.add=!this.add;
   }
 }

@@ -12,7 +12,8 @@
 
     <app-header></app-header>
     <!-- <app-pipes></app-pipes> -->
-    <app-emptemplateform (newemp)="newEmployeeEmitted($event)"></app-emptemplateform>
+    <button (click)="addEmp()">Add Employee</button>
+    <app-emptemplateform *ngIf="add" (newemp)="newEmployeeEmitted($event)"></app-emptemplateform>
     <app-employeelist [newemp]="newemp"></app-employeelist>
     <app-footer></app-footer>
 </div>

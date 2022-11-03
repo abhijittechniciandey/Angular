@@ -17,7 +17,9 @@ export class EmptemplateformComponent implements OnInit {
   addEmployee(emp:any)
   {
     console.log(emp)
-    this.newemp.emit(emp);
+    
+    this.newemp.emit(emp.value);
+    emp.reset();
   } 
 
 }

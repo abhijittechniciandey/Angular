@@ -20,6 +20,11 @@ cannot use more than 1 structural directive on 1 element
 <ng-template #display>
     <div *ngFor="let employee of employees">
         <app-employee [emp]="employee">
+            <button style="margin-right: 5px;">Delete</button>
+            <button (click)="edit(employee)">Edit</button>
         </app-employee>
     </div>
 </ng-template>
+<app-editempform [@enterAnimation]="!isEdit" class="editform"
+*ngIf="!isEdit" [employee]="editemp" (empupdate)="updateEmployee($event)"></app-editempform>
+

@@ -1,1 +1,54 @@
-<p>editempform works!</p>
+<h1>{{title}}</h1>
+<form #empform="ngForm" (submit)="editEmployee(empform)">
+    <div class="mb-3">
+        <input type="text" class="form-control" [class.is-invalid]="eid.invalid && eid.touched" required
+            placeholder="enter id" [ngModel]="employee?.eid" name="eid" #eid="ngModel" ngModel/>
+        <!-- <span>{{ename.className}}</span>  -->
+        <div *ngIf="eid.touched">
+            <div *ngIf="eid.errors && (eid.invalid)">
+                <small class="text-danger" *ngIf="eid.errors['required']">
+                    Id required </small>
+
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <input type="text" class="form-control" [class.is-invalid]="ename.invalid && ename.touched" minlength="5"
+            required placeholder="enter name" #ename="ngModel" ngModel name="ename" 
+            [ngModel]="employee?.ename"/>
+        
+    </div>
+    <div class="mb-3">
+        <input type="email" class="form-control" [class.is-invalid]="email.invalid && email.touched" minlength="5"
+            required placeholder="enter email" #email="ngModel" ngModel name="email"
+            [ngModel]="employee?.email" />
+        
+    </div>
+    <div class="mb-3">
+        <input type="text" class="form-control" [class.is-invalid]="phone.invalid && phone.touched" minlength="5"
+            required placeholder="enter phone" #phone="ngModel" ngModel name="phone"
+            [ngModel]="employee?.phone" />
+        
+    </div>
+    <div ngModelGroup="address">
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="enter city" 
+            #city="ngModel" ngModel name="city" [ngModel]="employee?.address?.city" />
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" placeholder="enter country"
+            required
+            #country="ngModel" ngModel name="country" [ngModel]="employee?.address?.country"/>
+           
+        </div>
+        <div class="mb-3">
+            <input type="text" class="form-control" [ngModel]="employee?.address?.zipcode"
+            placeholder="enter zipcode" #zipcode="ngModel" ngModel name="zipcode" />
+        </div>
+        
+    </div>
+    <div class="mb-3">
+        <button type="submit">{{title}}</button>
+        <button type="button" (click)="cancelEdit()">Cancel</button>
+    </div>
+</form>

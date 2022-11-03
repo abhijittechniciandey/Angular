@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Employee } from '../model/employee';
 
 @Component({
   selector: 'app-editempform',
@@ -7,9 +8,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditempformComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  employee:Employee|null;
+
+  @Output()
+  empupdate:EventEmitter<Employee | null> = new EventEmitter();
+  title = "Edit Employee"
+  constructor() {
+    this.employee = null;
+   }
 
   ngOnInit(): void {
+  }
+
+  editEmployee(eform:any)
+  {
+    this.empupdate.emit(eform.value);
+    eform.reset();
+  }
+  cancelEdit()
+  {
+    this.empupdate.emit(null);
   }
 
 }
