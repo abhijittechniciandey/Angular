@@ -18,6 +18,7 @@ import { EditempformComponent } from './editempform/editempform.component';
 import { LifecycleComponent } from './lifecycle/lifecycle.component';
 import { ChildComponent } from './lifecycle/child.component';
 import { ReactiveComponent } from './reactive/reactive.component';
+import { ServiceCompComponent } from './service-comp/service-comp.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { ReactiveComponent } from './reactive/reactive.component';
     EditempformComponent,
     LifecycleComponent,
     ChildComponent,
-    ReactiveComponent
+    ReactiveComponent,
+    ServiceCompComponent
   ],
   imports: [
     BrowserModule, ReactiveFormsModule,

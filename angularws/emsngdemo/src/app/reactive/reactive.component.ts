@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { hasExclamationMark } from '../validators/customvalidator';
+
 
 @Component({
   selector: 'app-reactive',
@@ -13,21 +15,25 @@ export class ReactiveComponent implements OnInit {
   empform:FormGroup;
   phone:FormControl;
   email:FormControl;
+  address:FormGroup;
+
   constructor() {
-    this.ename = new FormControl('shalini');
-    this.phone = new FormControl(
-      '',[Validators.required, 
-        Validators.pattern("\\d+"), 
-        Validators.minLength(5)]
-      );
-      this.email=new FormControl('',
-      [Validators.email, Validators.required])
-    console.log(this.ename)
+
+    this.address=new FormGroup({
+      country:new FormControl(),
+      zipcode:new FormControl()
+    })
+    this.phone = new FormControl('',[Validators.required, Validators.pattern("\\d+"), 
+        Validators.minLength(5)]);
+      this.email=new FormControl('s!ha@g.c',
+      [Validators.email, Validators.required, hasExclamationMark])
     this.empform = new FormGroup({
       phone:this.phone,
-      city:new FormControl('Mumbai'),
-      email: this.email
+      city:new FormControl('',[Validators.required]),
+      email: this.email,
+      address: this.address
     })
+    this.ename = new FormControl('shalini');
    }
 
   ngOnInit(): void {

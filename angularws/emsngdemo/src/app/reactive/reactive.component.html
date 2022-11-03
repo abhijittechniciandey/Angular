@@ -20,9 +20,17 @@
         </div>
     </div>
     <div class="mb-3">
-        <input type="text" formControlName="city"/>
+        <input type="text" formControlName="city" [class.error]="empform.controls['city']['errors']"/>
     </div>
     <div class="mb-3">
-        <input type="text" formControlName="email"/>
+        <input type="text" formControlName="email" [class.error]="email.errors"/>
+    </div>
+    <div [formGroup]="address">
+        <div class="mb-3">
+            <input type="text" formControlName="country"/>
+        </div>
+        <div class="mb-3">
+            <input type="text" formControlName="zipcode"/>
+        </div>
     </div>
 </form>

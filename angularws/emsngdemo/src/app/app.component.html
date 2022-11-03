@@ -10,7 +10,11 @@
     (click)="clicked()"
     class="btn btn-primary">Click Me</button> -->
     <!-- <app-lifecycle></app-lifecycle> -->
-    <app-reactive></app-reactive>
+    <!-- <app-reactive></app-reactive> -->
+    <app-service-comp></app-service-comp>
+    <hr/>
+    <input type="text" [(ngModel)]="ds.message"/>
+    <h3>Message in App : {{ds.message}}</h3>
     <!-- <app-header></app-header> -->
     <!-- <app-pipes></app-pipes> -->
     <!-- <button (click)="addEmp()">Add Employee</button>

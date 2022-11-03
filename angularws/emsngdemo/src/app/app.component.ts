@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Employee } from './model/employee';
+import { DemoService } from './service-comp/demo.service';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +8,15 @@ import { Employee } from './model/employee';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  //ds:DemoService;
+  constructor( public ds:DemoService){
+    //this.ds = ds;
+  }
   title = 'Welcome to Rebit';
   isEnabled:boolean = false;
   message:string = 'Enter some text'
   add:boolean = false;
+  
   clicked()
   {
     alert('button clicked')
