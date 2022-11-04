@@ -18,4 +18,9 @@ export class EmpService {
   {
     return this.http.post(`${this.url}/employees`, emp);
   }
+
+  deleteEmployee(id:number)
+  {
+   return  this.http.delete(`${this.url}/employees/${id}`)
+  }
 }

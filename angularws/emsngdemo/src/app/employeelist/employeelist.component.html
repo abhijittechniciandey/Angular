@@ -20,7 +20,7 @@ cannot use more than 1 structural directive on 1 element
 <ng-template #display>
     <div *ngFor="let employee of employees">
         <app-employee [emp]="employee">
-            <button style="margin-right: 5px;">Delete</button>
+            <button style="margin-right: 5px;" (click)="deleteEmp(employee.eid)">Delete</button>
             <button (click)="edit(employee)">Edit</button>
         </app-employee>
     </div>

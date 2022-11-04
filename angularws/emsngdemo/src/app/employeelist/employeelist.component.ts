@@ -82,4 +82,9 @@ export class EmployeelistComponent implements OnInit , OnChanges{
       }
       this.isEdit = !this.isEdit  
   }
+  deleteEmp(eid:number)
+  {
+    this.es.deleteEmployee(eid)
+    .subscribe(resp => console.log(resp));
+  }
 }
