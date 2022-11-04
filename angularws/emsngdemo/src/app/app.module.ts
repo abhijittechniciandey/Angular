@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
@@ -19,6 +20,7 @@ import { LifecycleComponent } from './lifecycle/lifecycle.component';
 import { ChildComponent } from './lifecycle/child.component';
 import { ReactiveComponent } from './reactive/reactive.component';
 import { ServiceCompComponent } from './service-comp/service-comp.component';
+import { PromiseObsComponent } from './promise-obs/promise-obs.component';
 
 
 @NgModule({
@@ -38,10 +40,11 @@ import { ServiceCompComponent } from './service-comp/service-comp.component';
     LifecycleComponent,
     ChildComponent,
     ReactiveComponent,
-    ServiceCompComponent
+    ServiceCompComponent,
+    PromiseObsComponent
   ],
   imports: [
-    BrowserModule, ReactiveFormsModule,
+    BrowserModule, ReactiveFormsModule, HttpClientModule,
     AppRoutingModule, FormsModule, BrowserAnimationsModule
   ],
   providers: [],

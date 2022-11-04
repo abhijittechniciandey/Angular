@@ -2,6 +2,7 @@ import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/cor
 import { employees } from '../model/data';
 import { Employee } from '../model/employee';
 import { trigger, style, animate, transition , state} from '@angular/animations';
+import { EmpService } from '../services/emp.service';
 
 @Component({
   selector: 'app-employeelist',
@@ -47,7 +48,7 @@ export class EmployeelistComponent implements OnInit , OnChanges{
   editemp:Employee | null;
 
   isEdit:boolean=true;
-  constructor() { 
+  constructor(private es:EmpService) { 
     console.log('employee list')
     this.employees = [];
     this.editemp = null;
@@ -56,19 +57,16 @@ export class EmployeelistComponent implements OnInit , OnChanges{
     // , address:{country:''}};
     console.log(this.newemp)
   }
-  ngOnChanges(changes: SimpleChanges): void {
-    this.employees.push(this.newemp)
-    
-  }
-
   ngOnInit(): void {
     console.log(this.newemp)
-    this.employees = employees;
-    
+    //this.employees = employees;
+    this.es.getAllEmployees().subscribe(data=> this.employees = data);
     console.log('on init')
     console.log(this.employees)
   }
-
+  ngOnChanges(changes: SimpleChanges): void {
+    this.employees.push(this.newemp)
+  }
   edit(employee:Employee)
   {
     this.editemp = employee;
