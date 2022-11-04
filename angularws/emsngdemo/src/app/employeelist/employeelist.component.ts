@@ -58,7 +58,6 @@ export class EmployeelistComponent implements OnInit , OnChanges{
     console.log(this.newemp)
   }
   ngOnInit(): void {
-    console.log(this.newemp)
     //this.employees = employees;
     this.es.getAllEmployees().subscribe(data=> this.employees = data);
     console.log('on init')

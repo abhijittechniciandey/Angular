@@ -9,7 +9,13 @@ import { Employee } from '../model/employee';
 export class EmpService {
   url:string = "http://localhost:8080";
   constructor(private http:HttpClient) { }
+  
   getAllEmployees():Observable<Employee[]>{
     return this.http.get<Employee[]>(`${this.url}/employees`);
+  }
+
+  addEmployee(emp:Employee)
+  {
+    return this.http.post(`${this.url}/employees`, emp);
   }
 }
