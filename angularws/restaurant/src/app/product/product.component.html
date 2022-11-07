@@ -1,0 +1,17 @@
+<div class="card">
+    <img src='../assets/{{product.img}}' class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{product.name}}</h5>
+      <p class="card-text">{{product.description.substring(0,100)}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Price : <i class="fa fa-inr" style="font-size:18px"></i> {{product.price}} </li>
+      <li class="list-group-item">Rating : {{product.rating}} </li>
+      
+    </ul>
+    <div class="card-body">
+      <!-- <button  class="card-link" (click)="addToCart(product)">Add To Cart</button>
+      <button  class="card-link">Details</button> -->
+      <ng-content></ng-content>
+    </div>
+  </div>

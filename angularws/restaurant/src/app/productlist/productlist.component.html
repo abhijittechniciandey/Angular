@@ -1,0 +1,18 @@
+
+<div class ="row" >
+    
+    <div class="col-md-3" *ngFor="let product of products;let i=index" style="margin-bottom: 20px;">
+        <app-product [product] = "product">
+            <button  class="card-link" (click)="addToCart(product)">Add To Cart</button>
+            <button  class="card-link">Details</button>
+        </app-product>
+    </div>
+</div>
+
+
+<!-- <div class="prow"> 
+    <div class="pcolumn" *ngFor="let product of products;let i=index">
+        <app-product [product] = "product"></app-product>
+     </div>
+</div> -->
+

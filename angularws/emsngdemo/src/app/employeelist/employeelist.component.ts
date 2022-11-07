@@ -3,6 +3,7 @@ import { employees } from '../model/data';
 import { Employee } from '../model/employee';
 import { trigger, style, animate, transition , state} from '@angular/animations';
 import { EmpService } from '../services/emp.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-employeelist',
@@ -46,9 +47,10 @@ export class EmployeelistComponent implements OnInit , OnChanges{
   email:'',phone:''
   , address:{country:''}};
   editemp:Employee | null;
-
+  selid:number=0;
   isEdit:boolean=true;
-  constructor(private es:EmpService) { 
+  constructor(private es:EmpService, private router:Router,
+    private activeroute:ActivatedRoute) { 
     console.log('employee list')
     this.employees = [];
     this.editemp = null;
@@ -62,6 +64,10 @@ export class EmployeelistComponent implements OnInit , OnChanges{
     this.es.getAllEmployees().subscribe(data=> this.employees = data);
     console.log('on init')
     console.log(this.employees)
+    this.activeroute.queryParams.subscribe(param=>{
+      console.log(param)
+      this.selid = parseInt(param['id']);
+    })
   }
   ngOnChanges(changes: SimpleChanges): void {
     this.employees.push(this.newemp)
@@ -87,4 +93,13 @@ export class EmployeelistComponent implements OnInit , OnChanges{
     this.es.deleteEmployee(eid)
     .subscribe(resp => console.log(resp));
   }
+
+  profile(eid:number)
+  {
+    this.router.navigate([`profile/${eid}`])
+  }
+  // profile(emp:Employee)
+  // {
+  //   this.router.navigateByUrl('/profile',{state:emp})
+  // }
 }

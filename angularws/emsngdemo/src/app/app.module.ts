@@ -21,7 +21,12 @@ import { ChildComponent } from './lifecycle/child.component';
 import { ReactiveComponent } from './reactive/reactive.component';
 import { ServiceCompComponent } from './service-comp/service-comp.component';
 import { PromiseObsComponent } from './promise-obs/promise-obs.component';
-
+import { LoginComponent } from './login/login.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import { ProfileComponent } from './profile/profile.component';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   declarations: [
@@ -41,11 +46,15 @@ import { PromiseObsComponent } from './promise-obs/promise-obs.component';
     ChildComponent,
     ReactiveComponent,
     ServiceCompComponent,
-    PromiseObsComponent
+    PromiseObsComponent,
+    LoginComponent,
+    ProfileComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule, ReactiveFormsModule, HttpClientModule,
-    AppRoutingModule, FormsModule, BrowserAnimationsModule
+    AppRoutingModule, FormsModule, BrowserAnimationsModule, MatCardModule, MatInputModule, 
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 <div class="employee">
-    <p>Id: {{emp?.eid}}</p>
+    <p>SelId: {{selid}}</p>
+    <p [class.green]="sel">Id: {{emp?.eid}}</p>
     <p>Name: {{emp?.ename}}</p>
     <p>Email: {{emp?.email}}</p>
     <p>Phone: {{emp?.phone}}</p>

@@ -18,8 +18,9 @@
     <h3>Message in App : {{ds.message}}</h3> -->
     <!-- <app-pipes></app-pipes> -->
     <app-header></app-header>
-    <button (click)="addEmp()">Add Employee</button>
+    <!-- <button (click)="addEmp()">Add Employee</button>
     <app-emptemplateform *ngIf="add" (newemp)="newEmployeeEmitted($event)"></app-emptemplateform>
-    <app-employeelist [newemp]="newemp"></app-employeelist>
+    <app-employeelist [newemp]="newemp"></app-employeelist> -->
+    <router-outlet></router-outlet>
     <app-footer></app-footer>
 </div>

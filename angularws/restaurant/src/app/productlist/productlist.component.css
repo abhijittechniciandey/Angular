@@ -1,0 +1,43 @@
+/* .prow {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px;
+  } */
+  
+  /* Create four equal columns that sits next to each other */
+  /* .pcolumn {
+    flex: 33.33%;
+    max-width: 33.33%;
+    padding: 0 4px;
+    margin-bottom: 10px;
+  }
+  
+  .pcolumn img {
+    margin-top: 8px;
+    vertical-align: middle;
+  }
+   */
+  /* Responsive layout - makes a two column-layout instead of four columns */
+  /* @media (max-width: 800px) {
+    .pcolumn {
+      flex: 50%;
+      max-width: 50%;
+    }
+  } */
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  /* @media (max-width: 600px) {
+    .pcolumn {
+      flex: 100%;
+      max-width: 100%;
+    }
+  } */
+  .prow{
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    grid-row-gap:20px;
+    grid-column-gap:20px;
+  }
+  /* .pcolumn{
+    border:1px solid saddlebrown;
+  } */

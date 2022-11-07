@@ -91,6 +91,9 @@
 
 <div class="container">
     <h1>Add Employee</h1>
+    <div *ngIf="error">
+        <span>{{errMsg}}</span>
+    </div>
     <form #emp="ngForm">
         <div class="mb-3">
             <input type="text" class="form-control" [class.error]="eid.invalid && eid.touched" 

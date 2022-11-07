@@ -19,9 +19,11 @@ cannot use more than 1 structural directive on 1 element
 
 <ng-template #display>
     <div *ngFor="let employee of employees">
-        <app-employee [emp]="employee">
+        <app-employee [selid]="selid" [emp]="employee">
             <button style="margin-right: 5px;" (click)="deleteEmp(employee.eid)">Delete</button>
             <button (click)="edit(employee)">Edit</button>
+            <button (click)="profile(employee.eid)">Profile</button>
+            <!-- <button (click)="profile(employee)">Profile</button> -->
         </app-employee>
     </div>
 </ng-template>

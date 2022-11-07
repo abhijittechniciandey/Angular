@@ -1,0 +1,20 @@
+<div class="container mt-5">
+
+    <div class="row">
+        <div class="col-md-3">
+            <select class="form-select mb-3 " [(ngModel)]="category" name="category">
+                <option value="Starter">Starter</option>
+                <option value="Main Course">Main Course</option>
+                <option value="Bread">Bread</option>
+                <option value="Dessert">Dessert</option>
+            </select>
+        </div>
+        <div class="col-md-7"></div>
+            <div class="col-md-2">
+                <i class="fa fa-cart-plus" id="cart-plus" (click)="displayCart()"> {{cs.cartItems.length}} Items</i>
+            </div>
+        </div>
+
+    <app-productlist [category]="category" *ngIf="!showCart"></app-productlist>
+    <app-cart *ngIf="showCart"></app-cart>
+</div>
