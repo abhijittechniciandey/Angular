@@ -8,8 +8,12 @@ export class UserService {
   constructor() { }
 
   isAuthenticated():boolean{
-    if(sessionStorage.getItem('username'))
+    if(sessionStorage.getItem('token'))
       return true;
     return false;
+  }
+  logout()
+  {
+    sessionStorage.removeItem('token')
   }
 }
