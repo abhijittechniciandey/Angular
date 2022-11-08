@@ -330,5 +330,9 @@
       "quantity": 1,
       "description": "How about a plate of hot, crispy jalebis with your evening tea? Yes, you read that right; and yes, we also know that the local sweet shop is out of bounds at the moment. But what if we tell you that you can make jalebis at home in just 15 minutes? And you do not even need any fancy ingredients. Don’t trust us? Scroll down and see for yourself."
     }
+  ],
+  "users":[
+    {"username":"shalini","password":"shalini"},
+    {"username":"riya","password":"riya"}
   ]
 }

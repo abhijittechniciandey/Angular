@@ -13,4 +13,7 @@ export class HttpService {
   getItemsByCategory(category:string):Observable<Product[]>{
     return this.http.get<Product[]>('http://localhost:3000/items?category='+category);
   }
+  getAllItems():Observable<Product[]>{
+    return this.http.get<Product[]>('http://localhost:3000/items');
+  }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CartService } from '../cart.service';
+import { CartService } from '../service/cart.service';
 
 @Component({
   selector: 'app-main',
@@ -8,7 +8,7 @@ import { CartService } from '../cart.service';
 })
 export class MainComponent implements OnInit {
 
-  category:string ="Starter"
+  category:string ="All"
   showCart:boolean = false;
   constructor(public cs:CartService) { }
 

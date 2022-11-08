@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -8,9 +9,19 @@ import { UserService } from '../services/user.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public us:UserService) { }
+  loginValid:boolean=true
+  constructor(public us:UserService, private router:Router) { }
 
   ngOnInit(): void {
   }
 
+  loginUser(user:any)
+  {
+    console.log(user)
+    this.us.loginUser(user.username, user.password)
+    .subscribe(resp=>{
+      sessionStorage.setItem("token",resp['jwt'])
+      this.router.navigate(['list'])
+    });
+  }
 }

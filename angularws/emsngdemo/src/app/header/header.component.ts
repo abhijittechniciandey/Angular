@@ -7,12 +7,9 @@ import { UserService } from '../services/user.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   constructor(public us:UserService, private router:Router) { }
-
-  ngOnInit(): void {
-  }
 
   logoutUser(){
     this.us.logout()

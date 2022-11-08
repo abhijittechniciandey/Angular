@@ -1,5 +1,5 @@
 import { Component, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
-import { CartService } from '../cart.service';
+import { CartService } from '../service/cart.service';
 import { foodItem } from '../database/data';
 import { CartItem } from '../model/CartItem';
 import { Product } from '../model/Product';
@@ -13,7 +13,7 @@ import { HttpService } from '../service/http.service';
 export class ProductlistComponent implements OnInit, OnChanges {
 
   @Input()
-  category:string='Starter'
+  category:string='All'
   @Output()
   //cartItem:Product = {};
   products:Product[]
@@ -22,12 +22,24 @@ export class ProductlistComponent implements OnInit, OnChanges {
   }
   ngOnChanges(changes: SimpleChanges): void {
     console.log("category changes",this.category)
+    if(this.category==='All')
+    this.hs.getAllItems().subscribe(data=>{
+      this.products = data
+    })
+    else
     this.hs.getItemsByCategory(this.category).subscribe(data=>{
       this.products = data
     })
+    
   }
 
   ngOnInit(): void {
+
+    if(this.category==='All')
+    this.hs.getAllItems().subscribe(data=>{
+      this.products = data
+    })
+    else
     this.hs.getItemsByCategory(this.category).subscribe(data=>{
       this.products = data
     })
