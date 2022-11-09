@@ -29,6 +29,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { DetailsComponent } from './details/details.component';
 import { TokenService } from './services/token.service';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,7 @@ import { TokenService } from './services/token.service';
     PipesComponent,
     CustomPipe,
     EmpPipe,
-    EmptemplateformComponent,
+    
     EditempformComponent,
     LifecycleComponent,
     ChildComponent,

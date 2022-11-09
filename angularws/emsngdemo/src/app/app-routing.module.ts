@@ -6,12 +6,16 @@ import { EmptemplateformComponent } from './emptemplateform/emptemplateform.comp
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthService } from './services/auth.service';
+import { MainComponent } from './main/main.component';
+import { TempComponent } from './temp/temp.component';
 
 
 const routes: Routes = [
   {path:'', redirectTo:'list',pathMatch:'full'},
   {path:'list', component:EmployeelistComponent, canActivate:[AuthService]},
-  {path:'add', component:EmptemplateformComponent},
+  // {path:'add', component:EmptemplateformComponent},
+  {path:'add', loadChildren:()=>import('./lazy-loading/lazy-loading.module')
+    .then(m=>m.LazyLoadingModule)},
   {path:'login', component:LoginComponent},
   // {path:'profile/:id/:name', component:ProfileComponent},
   {path:'profile/:id', component:ProfileComponent,
@@ -24,7 +28,11 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule, MainComponent],
+  declarations: [
+    MainComponent,
+    TempComponent
+  ],
   
 })
 export class AppRoutingModule { }

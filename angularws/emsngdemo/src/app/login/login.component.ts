@@ -7,13 +7,11 @@ import { UserService } from '../services/user.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
   loginValid:boolean=true
   constructor(public us:UserService, private router:Router) { }
 
-  ngOnInit(): void {
-  }
 
   loginUser(user:any)
   {

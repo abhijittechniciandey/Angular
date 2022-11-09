@@ -8,14 +8,14 @@ import { EmpService } from '../services/emp.service';
   templateUrl: './emptemplateform.component.html',
   styleUrls: ['./emptemplateform.component.css']
 })
-export class EmptemplateformComponent implements OnInit {
+export class EmptemplateformComponent {
 
   @Output()
   newemp:EventEmitter<Employee> = new EventEmitter<Employee>();
   error:boolean = false;
   errMsg:string='Some error'
   constructor(private es:EmpService, private router:Router) { }
-  ngOnInit(): void {}
+ 
 
   addEmployee(emp:any)
   {

@@ -6,7 +6,7 @@ import { Employee } from '../model/employee';
   templateUrl: './editempform.component.html',
   styleUrls: ['./editempform.component.css']
 })
-export class EditempformComponent implements OnInit {
+export class EditempformComponent {
 
   @Input()
   employee:Employee|null;
@@ -18,8 +18,7 @@ export class EditempformComponent implements OnInit {
     this.employee = null;
    }
 
-  ngOnInit(): void {
-  }
+
 
   editEmployee(eform:any)
   {

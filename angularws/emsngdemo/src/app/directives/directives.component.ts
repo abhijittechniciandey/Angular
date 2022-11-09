@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './directives.component.html',
   styleUrls: ['./directives.component.css'],
 })
-export class DirectivesComponent implements OnInit {
+export class DirectivesComponent {
   styles: string = 'bgyellow txtgreen';
 
 
@@ -36,5 +36,5 @@ export class DirectivesComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  
 }
